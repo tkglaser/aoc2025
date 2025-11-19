@@ -1,0 +1,30 @@
+{
+  "name": "aoc2025",
+  "version": "1.0.0",
+  "description": "Advent of Code 2025 - solutions",
+  "type": "module",
+  "scripts": {
+    "start": "aocrunner day",
+    "build": "aocrunner build",
+    "format": "prettier -w src",
+    "update:readme": "aocrunner update:readme"
+  },
+  "keywords": [
+    "aoc"
+  ],
+  "author": "tkglaser",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/pegjs": "^0.10.6",
+    "aocrunner": "^1.10.0",
+    "prettier": "^2.8.0"
+  },
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^6.3.1",
+    "pegjs": "^0.10.0"
+  },
+  "engines": {
+    "node": ">=16.13.0"
+  }
+}
