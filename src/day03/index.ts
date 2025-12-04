@@ -17,6 +17,8 @@ const maxJoltage = memoise((bank: string, batteries: number): string => {
   return +withHead > +withoutHead ? withHead : withoutHead;
 })
 
+const maxJoltageMapper = (batteries: number) => (bank: string) => +maxJoltage(bank, batteries)
+
 function sum(list: number[]) {
   return list.reduce((prev, curr) => prev + curr, 0)
 }
@@ -24,13 +26,13 @@ function sum(list: number[]) {
 const part1 = (rawInput: string) => {
   const input = parse(rawInput);
 
-  return sum(input.map(bank => +maxJoltage(bank, 2)))
+  return sum(input.map(maxJoltageMapper(2)))
 };
 
 const part2 = (rawInput: string) => {
   const input = parse(rawInput);
 
-  return sum(input.map(bank => +maxJoltage(bank, 12)))
+  return sum(input.map(maxJoltageMapper(12)))
 };
 
 run({
