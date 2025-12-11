@@ -70,6 +70,13 @@ export class Coord implements IHashable {
     );
   }
 
+  distance(c: Coord) {
+    return this.zip(this.coords, c.coords, (a, b) => Math.pow(Math.abs(a - b), 2)).reduce(
+      (prev, curr) => prev + curr,
+      0,
+    );
+  }
+
   get not() {
     return new Coord(this.coords.map((c) => -c));
   }
